@@ -21,6 +21,8 @@ _Añade aquí las imágenes de tu proyecto (puedes subirlas a GitHub y luego enl
 ![Captura 4](/imagenes/4.png)  
 ![Captura 5](/imagenes/5.png)  
 ![Captura 6](/imagenes/6.png)  
+![Captura 7](/imagenes/7.png)  
+
 
 ---
 
