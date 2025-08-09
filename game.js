@@ -1,43 +1,30 @@
-// game.js
-
 // Genera un número aleatorio entre 1 y 100
 const numeroSecreto = Math.floor(Math.random() * 100) + 1;
 let intentos = 0;
 
-console.log("¡Bienvenido al juego de Frío o Caliente!");
-console.log("Adivina el número entre 1 y 100.");
+function adivinar() {
+    const input = document.getElementById("numero");
+    const mensaje = document.getElementById("mensaje");
 
-// Importa el módulo para leer desde consola
-const readline = require('readline');
-const rl = readline.createInterface({
-    input: process.stdin,
-    output: process.stdout
-});
+    let numeroJugador = parseInt(input.value);
+    intentos++;
 
-function preguntar() {
-    rl.question("Ingresa tu número: ", (respuesta) => {
-        let numeroJugador = parseInt(respuesta);
-        intentos++;
+    if (isNaN(numeroJugador)) {
+        mensaje.textContent = "⚠️ Por favor, ingresa un número válido.";
+        return;
+    }
 
-        if (isNaN(numeroJugador)) {
-            console.log("Por favor, ingresa un número válido.");
-            preguntar();
-            return;
-        }
-
-        if (numeroJugador === numeroSecreto) {
-            console.log(`¡Correcto! El número era ${numeroSecreto}. Lo lograste en ${intentos} intentos.`);
-            rl.close();
+    if (numeroJugador === numeroSecreto) {
+        mensaje.textContent = `🎉 ¡Correcto! El número era ${numeroSecreto}. Lo lograste en ${intentos} intentos.`;
+    } else {
+        let diferencia = Math.abs(numeroSecreto - numeroJugador);
+        if (diferencia <= 5) {
+            mensaje.textContent = "🔥 Caliente";
         } else {
-            let diferencia = Math.abs(numeroSecreto - numeroJugador);
-            if (diferencia <= 5) {
-                console.log("🔥 Caliente");
-            } else {
-                console.log("❄️ Frío");
-            }
-            preguntar();
+            mensaje.textContent = "❄️ Frío";
         }
-    });
-}
+    }
 
-preguntar();
+    input.value = "";
+    input.focus();
+}

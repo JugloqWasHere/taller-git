@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Juego Frío o Caliente</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin-top: 50px;
+        }
+        input {
+            padding: 5px;
+            font-size: 16px;
+        }
+        button {
+            padding: 5px 10px;
+            font-size: 16px;
+        }
+        #mensaje {
+            font-weight: bold;
+            margin-top: 15px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Juego de Frío o Caliente</h1>
+    <p>Adivina el número entre 1 y 100</p>
+
+    <input type="number" id="numero" placeholder="Escribe tu número">
+    <button onclick="adivinar()">Probar</button>
+
+    <div id="mensaje"></div>
+
+    <script src="game.js"></script>
+</body>
+</html>
