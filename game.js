@@ -28,3 +28,5 @@ function adivinar() {
     input.value = "";
     input.focus();
 }
+
+//AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA
